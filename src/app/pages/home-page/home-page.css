@@ -1,3 +1,86 @@
+@import '../../../styles/variables.css';
+
 :host {
-    display: block;
+  display: block;
+}
+
+.home {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.left {
+  padding: 24px 24px 0 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  flex: 1;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.restoNameAndDate {
+  line-height: 140%;
+}
+
+.restoName {
+  color: white;
+  font-weight: 600;
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+
+.todaysDate {
+  font-size: 16px;
+  color: var(--primary-white);
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px;
+  border: 1px solid var(--blue-border);
+  background-color: var(--input-bg-blue);
+  border-radius: var(--radius-mini);
+  gap: 8px;
+  width: 220px;
+  height: 48px;
+}
+
+.searchIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.searchIconImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: var(--primary-white);
+}
+
+.searchInput::placeholder {
+  color: var(--tertiary-blue-text);
+  font-size: 14px;
+  line-height: 140%;
+}
+
+.searchInput::-webkit-search-cancel-button {
+  display: none;
 }
