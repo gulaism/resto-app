@@ -1,0 +1,69 @@
+@import "../../../styles/variables.css";
+
+:host {
+    width: 104px;
+    display: block;
+    flex-shrink: 0;
+    /* height: 100vh; */
+    background-color: var(--primary-blue-dark);
+}
+
+.sideBar {
+    padding: 12px 0 0 12px;
+}
+
+.logo {
+    border-radius: var(--radius-mid);
+    padding: 12px 24px 16px 12px;
+    width: max-content;
+    cursor: pointer;
+}
+
+.logoIcon {
+    width: 56px;
+    height: 56px;
+    background-color: color-mix(in srgb, var(--secondary-orange) 26%, transparent);
+    border-radius: var(--radius-mid);
+    padding: 8px;
+    /* opacity: 26%; */
+}
+
+.sideButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-bottom: 12px;
+}
+
+.active {
+    background-color: var(--secondary-blue-light);
+    border-top-left-radius: var(--radius-mid);
+    border-bottom-left-radius: var(--radius-mid);
+}
+
+.navLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 39px 40px 39px 28px;
+    cursor: pointer;
+}
+
+.navIcon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.logOut {
+    padding: 30px;
+    cursor: pointer;
+}
+
+.logOutIcon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    object-fit: contain;
+}

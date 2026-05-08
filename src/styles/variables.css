@@ -1,0 +1,18 @@
+:root {
+    --primary-blue-dark: #1F1D2B;  
+    --secondary-blue-light: #252836;
+    --tertiary-blue-text: #ABBBC2;
+    --primary-white: #E0E6E9;
+    --secondary-white: #FAFAFA;
+    --primary-orange: #EA7C69;
+    --secondary-orange: #EB966A;
+    --blue-border: #393C49;
+    --input-bg-blue: #2D303E;
+    --input-gray: #889898;
+
+    --radius-mini: 8px;
+    --radius-mid: 12px;
+    --radius-max: 16px;
+}
+
+/* border-radius: 8, 12, 16 */

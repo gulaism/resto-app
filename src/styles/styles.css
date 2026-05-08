@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@import './variables.css';
+
+body {
+    background-color: var(--secondary-blue-light);
+    margin: 0;
+    font-family: 'Barlow', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}

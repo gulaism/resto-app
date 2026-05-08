@@ -1,0 +1,11 @@
+@import "../styles/variables.css";
+
+.layout {
+    display: flex;
+    /* height: 100vh; */
+    /* width: 104px; */
+}
+main {
+    flex: 1;
+    overflow-y: auto;
+}
