@@ -16,6 +16,8 @@
   flex-direction: column;
   justify-content: start;
   flex: 1;
+  align-items: start;
+  gap: 24px;
 }
 
 .head {
@@ -83,4 +85,51 @@
 
 .searchInput::-webkit-search-cancel-button {
   display: none;
+}
+
+.categories {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 32px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 140%;
+  color: white;
+  position: relative;
+  width: 100%;
+}
+
+.categories::after {
+  position: absolute;
+  content: "";
+  background: var(--blue-border);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+}
+
+.category {
+  padding-bottom: 13px;
+  cursor: pointer;
+}
+
+.activeCat {
+  color: var(--primary-orange);
+  position: relative;
+  transition: ease 0.3s;
+}
+
+.activeCat::after {
+  content: "";
+  background: var(--primary-orange);
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 50%;
+  height: 3px;
+  /* border-radius: 3px; */
+  z-index: 2;
+  transition: all 3s ease-in-out;
 }

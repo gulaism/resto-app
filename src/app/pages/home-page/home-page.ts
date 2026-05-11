@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
 @Component({
@@ -9,4 +9,5 @@ import { DatePipe } from '@angular/common';
 })
 export class HomePage {
   today: number = Date.now();
+  activeCat = signal<string>('hot dishes');
 }

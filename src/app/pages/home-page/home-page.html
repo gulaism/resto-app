@@ -11,7 +11,11 @@
                 <input class="searchInput" placeholder="Search for food, coffee, etc..." type="search" name="" id="">
             </div>
         </div>
-        <div>categories</div>
+        <div class="categories">
+            <div class="category" [class.activeCat]="activeCat() === 'hot dishes'" (click)="activeCat.set('hot dishes')">Hot Dishes</div>
+            <div class="category" [class.activeCat]="activeCat() === 'cold dishes'" (click)="activeCat.set('cold dishes')">Cold Dishes</div>
+            <div class="category" [class.activeCat]="activeCat() === 'soup'" (click)="activeCat.set('soup')">Soup</div>
+        </div>
         <div>title</div>
         <div>cards</div>
     </div>
