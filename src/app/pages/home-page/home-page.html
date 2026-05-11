@@ -12,13 +12,24 @@
             </div>
         </div>
         <div class="categories">
-            <div class="category" [class.activeCat]="activeCat() === 'hot dishes'" (click)="activeCat.set('hot dishes')">Hot Dishes</div>
-            <div class="category" [class.activeCat]="activeCat() === 'cold dishes'" (click)="activeCat.set('cold dishes')">Cold Dishes</div>
+            <div class="category" [class.activeCat]="activeCat() === 'hot dishes'"
+                (click)="activeCat.set('hot dishes')">Hot Dishes</div>
+            <div class="category" [class.activeCat]="activeCat() === 'cold dishes'"
+                (click)="activeCat.set('cold dishes')">Cold Dishes</div>
             <div class="category" [class.activeCat]="activeCat() === 'soup'" (click)="activeCat.set('soup')">Soup</div>
         </div>
         <div class="parag">Choose Dishes</div>
-        <div>
-            
+        <div class="cards">
+            @for (prod of this.data(); track $index) {
+                @if (this.activeCat().trim() === prod.category.trim()) {
+                <div class="card">
+                    <div class="prodPhoto"><img class="prodImg" src="/assets/{{prod.image}}" alt="{{prod.name}} Photo"></div>
+                    <div class="prodName">{{prod.name}}</div>
+                    <span class="prodPrice">{{prod.price | currency}}</span>
+                    <div class="prodStock">{{prod.availableNum}} Bowls available</div>
+                </div>
+                }
+            }
         </div>
     </div>
     <div class="right">right</div>

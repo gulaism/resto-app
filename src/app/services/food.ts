@@ -20,7 +20,7 @@ export class Food {
   private mockProducts: Products = [
     {
       id: 1,
-      image: 'assets/images/food1.png',
+      image: 'food1.png',
       name: 'Spicy seasoned seafood noodles',
       price: 2.29,
       availableNum: 20,
@@ -28,7 +28,7 @@ export class Food {
     },
     {
       id: 2,
-      image: 'assets/images/food2.png',
+      image: 'food2.png',
       name: 'Salted Pasta with mushroom sauce',
       price: 2.69,
       availableNum: 11,
@@ -36,7 +36,7 @@ export class Food {
     },
     {
       id: 3,
-      image: 'assets/images/food3.png',
+      image: 'food3.png',
       name: 'Beef dumpling in hot and sour soup',
       price: 2.99,
       availableNum: 16,
@@ -44,7 +44,7 @@ export class Food {
     },
     {
       id: 4,
-      image: 'assets/images/food4.png',
+      image: 'food4.png',
       name: 'Healthy noodle with spinach leaf',
       price: 3.29,
       availableNum: 22,
@@ -52,7 +52,7 @@ export class Food {
     },
     {
       id: 5,
-      image: 'assets/images/food4.png',
+      image: 'food4.png',
       name: 'Hot spicy fried rice with omelet',
       price: 3.49,
       availableNum: 13,
@@ -60,7 +60,7 @@ export class Food {
     },
     {
       id: 6,
-      image: 'assets/images/food6.png',
+      image: 'food5.png',
       name: 'Spicy instant noodle with special omelette',
       price: 3.59,
       availableNum: 17,
@@ -68,7 +68,7 @@ export class Food {
     },
     {
       id: 7,
-      image: 'assets/images/food2.png',
+      image: 'food2.png',
       name: 'Crispy fried chicken with garlic sauce',
       price: 3.79,
       availableNum: 14,
@@ -76,7 +76,7 @@ export class Food {
     },
     {
       id: 8,
-      image: 'assets/images/food3.png',
+      image: 'food3.png',
       name: 'Stir fried vegetables with tofu',
       price: 2.99,
       availableNum: 18,
@@ -84,7 +84,7 @@ export class Food {
     },
     {
       id: 9,
-      image: 'assets/images/food4.png',
+      image: 'food4.png',
       name: 'Braised pork belly with steamed buns',
       price: 4.29,
       availableNum: 9,
@@ -92,7 +92,7 @@ export class Food {
     },
     {
       id: 10,
-      image: 'assets/images/food5.png',
+      image: 'food5.png',
       name: 'Cucumber salad with sesame dressing',
       price: 1.99,
       availableNum: 25,
@@ -100,7 +100,7 @@ export class Food {
     },
     {
       id: 11,
-      image: 'assets/images/food1.png',
+      image: 'food1.png',
       name: 'Chilled tofu with spring onion',
       price: 1.79,
       availableNum: 30,
@@ -108,7 +108,7 @@ export class Food {
     },
     {
       id: 12,
-      image: 'assets/images/food2.png',
+      image: 'food2.png',
       name: 'Cold sesame noodles with shredded chicken',
       price: 2.49,
       availableNum: 20,
@@ -116,7 +116,7 @@ export class Food {
     },
     {
       id: 13,
-      image: 'assets/images/food3.png',
+      image: 'food3.png',
       name: 'Marinated jellyfish with vinegar',
       price: 2.29,
       availableNum: 15,
@@ -124,7 +124,7 @@ export class Food {
     },
     {
       id: 14,
-      image: 'assets/images/food4.png',
+      image: 'food4.png',
       name: 'Smashed garlic eggplant salad',
       price: 1.89,
       availableNum: 22,
@@ -132,7 +132,7 @@ export class Food {
     },
     {
       id: 15,
-      image: 'assets/images/food5.png',
+      image: 'food5.png',
       name: 'Spicy shredded pork ear salad',
       price: 2.59,
       availableNum: 12,
@@ -140,7 +140,7 @@ export class Food {
     },
     {
       id: 16,
-      image: 'assets/images/food1.png',
+      image: 'food1.png',
       name: 'Cold poached chicken with chili oil',
       price: 2.99,
       availableNum: 18,
@@ -148,7 +148,7 @@ export class Food {
     },
     {
       id: 17,
-      image: 'assets/images/food2.png',
+      image: 'food2.png',
       name: 'Pickled radish with sweet vinegar',
       price: 1.49,
       availableNum: 35,
@@ -156,7 +156,7 @@ export class Food {
     },
     {
       id: 18,
-      image: 'assets/images/food3.png',
+      image: 'food3.png',
       name: 'Chilled lotus root with honey',
       price: 1.69,
       availableNum: 28,
@@ -164,7 +164,7 @@ export class Food {
     },
     {
       id: 19,
-      image: 'assets/images/food4.png',
+      image: 'food4.png',
       name: 'Five spice beef shank slices',
       price: 3.29,
       availableNum: 10,
@@ -172,7 +172,7 @@ export class Food {
     },
     {
       id: 20,
-      image: 'assets/images/food5.png',
+      image: 'food5.png',
       name: 'Cold spinach with peanut sauce',
       price: 1.59,
       availableNum: 32,
@@ -180,7 +180,7 @@ export class Food {
     },
     {
       id: 21,
-      image: 'assets/images/food1.png',
+      image: 'food1.png',
       name: 'Soy marinated boiled eggs',
       price: 1.29,
       availableNum: 40,
@@ -188,7 +188,7 @@ export class Food {
     },
     {
       id: 22,
-      image: 'assets/images/food2.png',
+      image: 'food2.png',
       name: 'Hot and sour soup with tofu',
       price: 2.19,
       availableNum: 24,
@@ -196,7 +196,7 @@ export class Food {
     },
     {
       id: 23,
-      image: 'assets/images/food3.png',
+      image: 'food3.png',
       name: 'Egg drop soup with tomato',
       price: 1.99,
       availableNum: 30,
@@ -204,7 +204,7 @@ export class Food {
     },
     {
       id: 24,
-      image: 'assets/images/food4.png',
+      image: 'food4.png',
       name: 'Wonton soup with pork filling',
       price: 2.79,
       availableNum: 18,
@@ -212,7 +212,7 @@ export class Food {
     },
     {
       id: 25,
-      image: 'assets/images/food5.png',
+      image: 'food5.png',
       name: 'Miso soup with seaweed and mushroom',
       price: 1.89,
       availableNum: 26,
@@ -220,7 +220,7 @@ export class Food {
     },
     {
       id: 26,
-      image: 'assets/images/food1.png',
+      image: 'food1.png',
       name: 'Spicy beef broth with glass noodles',
       price: 3.19,
       availableNum: 14,
@@ -228,7 +228,7 @@ export class Food {
     },
     {
       id: 27,
-      image: 'assets/images/food2.png',
+      image: 'food2.png',
       name: 'Pork bone broth with vegetables',
       price: 3.49,
       availableNum: 11,
@@ -236,7 +236,7 @@ export class Food {
     },
     {
       id: 28,
-      image: 'assets/images/food3.png',
+      image: 'food3.png',
       name: 'Creamy corn soup with chicken',
       price: 2.49,
       availableNum: 20,
@@ -244,7 +244,7 @@ export class Food {
     },
     {
       id: 29,
-      image: 'assets/images/food4.png',
+      image: 'food4.png',
       name: 'Mushroom and tofu clear broth',
       price: 2.09,
       availableNum: 22,
@@ -252,7 +252,7 @@ export class Food {
     },
     {
       id: 30,
-      image: 'assets/images/food5.png',
+      image: 'food5.png',
       name: 'Spicy lamb soup with herbs',
       price: 3.79,
       availableNum: 9,
@@ -260,7 +260,7 @@ export class Food {
     },
     {
       id: 31,
-      image: 'assets/images/food1.png',
+      image: 'food1.png',
       name: 'Seafood tofu soup with ginger',
       price: 3.29,
       availableNum: 13,
@@ -268,7 +268,7 @@ export class Food {
     },
     {
       id: 32,
-      image: 'assets/images/food2.png',
+      image: 'food2.png',
       name: 'Sweet corn and carrot soup',
       price: 1.79,
       availableNum: 28,
@@ -276,7 +276,7 @@ export class Food {
     },
     {
       id: 33,
-      image: 'assets/images/food3.png',
+      image: 'food3.png',
       name: 'Winter melon and pork rib soup',
       price: 2.89,
       availableNum: 16,
@@ -284,7 +284,7 @@ export class Food {
     },
     {
       id: 34,
-      image: 'assets/images/food4.png',
+      image: 'food4.png',
       name: 'Sour cabbage fish soup',
       price: 3.59,
       availableNum: 10,
@@ -292,7 +292,7 @@ export class Food {
     },
     {
       id: 35,
-      image: 'assets/images/food5.png',
+      image: 'food5.png',
       name: 'Lentil soup with cumin and lemon',
       price: 2.29,
       availableNum: 19,
@@ -300,7 +300,7 @@ export class Food {
     },
     {
       id: 36,
-      image: 'assets/images/food1.png',
+      image: 'food1.png',
       name: 'Chicken congee with ginger and scallion',
       price: 2.59,
       availableNum: 21,

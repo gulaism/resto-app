@@ -16,7 +16,7 @@
         </div>
         <div [class.active]="activeLink() === 'setting'" (click)="activeLink.set('setting')" class="navLink"><img
                 class="navIcon" src="../../../assets/Setting.svg" alt="Setting"></div>
+                <div [class.active]="activeLink() === 'logout'" (click)="activeLink.set('logout')" class="navLink"><img
+                        class="logOutIcon" src="../../../assets/LogOut.svg" alt="LogOut"></div>
     </div>
-    <div [class.active]="activeLink() === 'logout'" (click)="activeLink.set('logout')" class="logOut"><img
-            class="logOutIcon" src="../../../assets/LogOut.svg" alt="LogOut"></div>
 </div>
