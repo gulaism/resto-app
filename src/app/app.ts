@@ -12,15 +12,12 @@ import { Sidebar } from "./layouts/sidebar/sidebar";
 })
 export class App {
   protected readonly title = signal('resto-app');
-  private foodService = inject(Food);
-  food = signal<Products>([]);
+  // private foodService = inject(Food);
+  // food = signal<Products>([]);
 
-  constructor() {
-    this.foodService.getProducts().pipe(takeUntilDestroyed()).subscribe(data => {
-      this.food.set(data)
-      console.log(data);
-      console.log(this.food());
-    });
-      console.log("All products: ", this.food());
-  }
+  // constructor() {
+  //   this.foodService.getProducts().pipe(takeUntilDestroyed()).subscribe(data => {
+  //     this.food.set(data)
+  //   });
+  // }
 }
