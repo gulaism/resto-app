@@ -2,10 +2,11 @@ import { Component, inject, signal } from '@angular/core';
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { Food, Products } from '../../services/food';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { Orders } from "./components/orders/orders";
 
 @Component({
   selector: 'app-home-page',
-  imports: [DatePipe, CurrencyPipe],
+  imports: [DatePipe, CurrencyPipe, Orders],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
 })
