@@ -90,6 +90,15 @@
             </div>
         </div>
     </div>
-    <div>prices</div>
-    <app-button />
+    <div class="totalCalc">
+        <div class="discountDiv">
+            <div class="discountHead">Discount</div>
+            <div class="discountPrice">{{0 | currency}}</div>
+        </div>
+        <div class="discountDiv">
+            <div class="discountHead">Sub total</div>
+            <div class="discountPrice">{{21.03 | currency}}</div>
+        </div>
+    </div>
+    <button class="orderSubmitBtn">Continue to Payment</button>
 </div>

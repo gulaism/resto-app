@@ -53,6 +53,7 @@
     gap: 24px;
     max-height: 430px;
     overflow-y: scroll;
+    border-bottom: 1px solid var(--blue-border);
 }
 
 .foodType {
@@ -164,4 +165,36 @@
     padding: 11px;
     border: 1px solid var(--primary-orange);
     border-radius: var(--radius-mini);
+}
+
+.totalCalc {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.discountDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.discountHead {
+    font-size: 14px;
+    color: var(--tertiary-blue-text);
+}
+
+.discountPrice {
+    font-weight: 500;
+}
+
+.orderSubmitBtn {
+    background-color: var(--primary-orange);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 140%;
+    padding: 14px;
+    border-radius: var(--radius-mini);
+    margin-top: 18px;
 }
