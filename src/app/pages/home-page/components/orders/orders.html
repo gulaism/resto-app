@@ -5,7 +5,13 @@
         <app-button [isActive]="activeIndex() === 1" (click)="activeIndex.set(1)" buttonContent="To go"/>
         <app-button [isActive]="activeIndex() === 2" (click)="activeIndex.set(2)" buttonContent="delivery"/>
     </div>
-    <div>tableHeader</div>
+    <div class="tableHeader">
+        <div>Item</div>
+        <div class="tabHeadRight">
+            <div>Qty</div>
+            <div>Price</div>
+        </div>
+    </div>
     <div>ordersTable</div>
     <div>prices</div>
     <app-button />
