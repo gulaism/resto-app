@@ -23,7 +23,7 @@
             @if (this.filteredData().length !== 0) {
                 @for (prod of this.filteredData(); track $index) {
                     @if (this.activeCat().trim() === prod.category.trim()) {
-                    <div class="card">
+                    <div (click)="orderedData(prod)" class="card">
                         <div class="prodPhoto"><img class="prodImg" src="/assets/{{prod.image}}" alt="{{prod.name}} Photo"></div>
                         <div class="prodName">{{prod.name}}</div>
                         <span class="prodPrice">{{prod.price | currency}}</span>
@@ -36,5 +36,5 @@
             }
         </div>
     </div>
-    <app-orders />
+    <app-orders [orderedItems]="this.orderedItems()" (updateQuantity)="onUpdateQuantity($event)" (removeItem)="onRemoveItem($event)"/>
 </div>

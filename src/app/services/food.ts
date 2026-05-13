@@ -9,6 +9,7 @@ export interface Product {
   price: number;
   availableNum: number;
   category: string;
+  quantity?: number;
 }
 
 export type Products = Product[];

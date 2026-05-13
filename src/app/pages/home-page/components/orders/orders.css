@@ -16,6 +16,10 @@
     width: 409px;
 }
 
+.noItemsDiv {
+    height: 100%;
+}
+
 .ordersHead {
     font-weight: 600;
     font-size: 20px;
@@ -51,7 +55,7 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
-    max-height: 430px;
+    height: 430px;
     overflow-y: scroll;
     border-bottom: 1px solid var(--blue-border);
 }
@@ -197,4 +201,8 @@
     padding: 14px;
     border-radius: var(--radius-mini);
     margin-top: 18px;
+}
+
+.limitedReached {
+    border: 2px solid red;
 }

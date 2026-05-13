@@ -161,6 +161,7 @@
   color: white;
   line-height: 140%;
   text-align: center;
+  cursor: pointer;
   /* min-width: 192px; */
 }
 
