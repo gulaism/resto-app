@@ -198,3 +198,9 @@
 .prodStock {
   color: var(--tertiary-blue-text);
 }
+
+.notExistText {
+  color: var(--tertiary-blue-text);
+  font-weight: 600;
+  width: max-content
+}

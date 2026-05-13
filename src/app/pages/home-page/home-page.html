@@ -8,7 +8,7 @@
             <div class="search">
                 <div class="searchIcon"><img class="searchIconImg" src="../../../assets/search.svg" alt="Search input">
                 </div>
-                <input class="searchInput" placeholder="Search for food, coffee, etc..." type="search" name="" id="">
+                <input class="searchInput" placeholder="Search for food, coffee, etc..." type="search" (input)="searchData($event)">
             </div>
         </div>
         <div class="categories">
@@ -20,15 +20,19 @@
         </div>
         <div class="parag">Choose Dishes</div>
         <div class="cards">
-            @for (prod of this.data(); track $index) {
-                @if (this.activeCat().trim() === prod.category.trim()) {
-                <div class="card">
-                    <div class="prodPhoto"><img class="prodImg" src="/assets/{{prod.image}}" alt="{{prod.name}} Photo"></div>
-                    <div class="prodName">{{prod.name}}</div>
-                    <span class="prodPrice">{{prod.price | currency}}</span>
-                    <div class="prodStock">{{prod.availableNum}} Bowls available</div>
-                </div>
+            @if (this.filteredData().length !== 0) {
+                @for (prod of this.filteredData(); track $index) {
+                    @if (this.activeCat().trim() === prod.category.trim()) {
+                    <div class="card">
+                        <div class="prodPhoto"><img class="prodImg" src="/assets/{{prod.image}}" alt="{{prod.name}} Photo"></div>
+                        <div class="prodName">{{prod.name}}</div>
+                        <span class="prodPrice">{{prod.price | currency}}</span>
+                        <div class="prodStock">{{prod.availableNum}} Bowls available</div>
+                    </div>
+                    }
                 }
+            } @else {
+                <div class="notExistText">Searched product doesn't exist in this category :D</div>
             }
         </div>
     </div>
