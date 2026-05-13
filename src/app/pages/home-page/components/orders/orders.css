@@ -46,3 +46,122 @@
     align-items: center;
     gap: 43px;
 }
+
+.ordersTable {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-height: 430px;
+    overflow-y: scroll;
+}
+
+.foodType {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.foodUp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.foodDetails {
+    display: flex;
+    /* align-items: center; */
+    gap: 8px;
+    max-width: 188px;
+    /* 3 dots if text overflows: */
+}
+
+.foodPhoto {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-shrink: 0;
+}
+
+.foodPhotoImg {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-shrink: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    object-fit: contain;
+}
+
+.foodInfo {
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.foodName {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    line-height: 130%;
+}
+
+.foodMenuPrice {
+    color: var(--tertiary-blue-text);
+    font-size: 12px;
+    line-height: 130%;
+    display: inline-block;
+}
+
+.foodMenuPrice::first-letter {
+    margin-right: 3.6px;
+}
+
+.foodCalc {
+    display: flex;
+    align-items: center;
+    gap: 21px;
+}
+
+.foodQty {
+    max-width: max-content;
+    width: 48px;
+    height: 48px;
+    padding: 14px 12px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border: 1px solid var(--blue-border);
+    background-color: var(--input-bg-blue);
+    color: inherit;
+    border-radius: var(--radius-mini);
+}
+
+.foodQty::-webkit-outer-spin-button,
+.foodQty::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.foodCalcPrice {
+    font-weight: 500;
+}
+
+.foodDown {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    justify-content: space-between;
+}
+.deleteBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    padding: 11px;
+    border: 1px solid var(--primary-orange);
+    border-radius: var(--radius-mini);
+}

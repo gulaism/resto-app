@@ -1,0 +1,18 @@
+@import '../../../styles/variables.css';
+
+:host {
+    width: 100%;
+}
+
+.inputFoodNote {
+    width: 100%;
+    border-radius: var(--radius-mini);
+    border: 1px solid var(--blue-border);
+    background-color: var(--input-bg-blue);
+    color: var(--primary-white);
+    padding: 14px;
+}
+
+.inputFoodNote::placeholder {
+    color: var(--input-gray);
+}
