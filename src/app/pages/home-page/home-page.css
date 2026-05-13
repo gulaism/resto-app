@@ -18,6 +18,8 @@
   flex: 1;
   align-items: start;
   gap: 24px;
+  overflow-y: auto;
+  height: 100vh;
 }
 
 .head {

@@ -9,5 +9,9 @@ body {
 * {
     box-sizing: border-box;
     scrollbar-width: none;
+}
 
+button {
+    border: none;
+    color: inherit;
 }

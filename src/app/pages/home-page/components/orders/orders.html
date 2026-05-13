@@ -1,6 +1,10 @@
 <div class="orders">
-    <div>title</div>
-    <div>options</div>
+    <div class="ordersHead">Orders #34562</div>
+    <div class="orderOptions">
+        <app-button [isActive]="activeIndex() === 0" (click)="activeIndex.set(0)" buttonContent="Dine in"/>
+        <app-button [isActive]="activeIndex() === 1" (click)="activeIndex.set(1)" buttonContent="To go"/>
+        <app-button [isActive]="activeIndex() === 2" (click)="activeIndex.set(2)" buttonContent="delivery"/>
+    </div>
     <div>tableHeader</div>
     <div>ordersTable</div>
     <div>prices</div>

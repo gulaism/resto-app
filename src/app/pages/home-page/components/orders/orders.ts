@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { Button } from "../../../../shared/button/button";
 
 @Component({
@@ -7,4 +7,10 @@ import { Button } from "../../../../shared/button/button";
   templateUrl: './orders.html',
   styleUrl: './orders.css',
 })
-export class Orders {}
+export class Orders {
+  activeIndex = signal<number>(0);
+
+  setActiveOption(index: number) {
+    this.activeIndex.set(index);
+  }
+}

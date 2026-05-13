@@ -1,0 +1,11 @@
+@import '../../../styles/variables.css';
+
+.sharedButton {
+    border-radius: var(--radius-mini);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 140%;
+    padding: 7px 12px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
