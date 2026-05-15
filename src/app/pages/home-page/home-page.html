@@ -36,5 +36,5 @@
             }
         </div>
     </div>
-    <app-orders [orderedItems]="this.orderedItems()" (updateQuantity)="onUpdateQuantity($event)" (removeItem)="onRemoveItem($event)"/>
+    <app-orders (clearOrders)="this.orderedItems.set([])" [orderedItems]="this.orderedItems()" (updateQuantity)="onUpdateQuantity($event)" (removeItem)="onRemoveItem($event)"/>
 </div>

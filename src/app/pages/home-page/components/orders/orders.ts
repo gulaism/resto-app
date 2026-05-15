@@ -20,6 +20,13 @@ export class Orders {
 
   isConfirmed = signal<boolean>(false);
 
+  clearOrders = output<void>();
+
+  clearAllOrders() {
+    this.clearOrders.emit();
+    this.isConfirmed.set(false);
+  }
+
 
   onQtyChange(event: Event, item: Product) {
     let value = +(event.target as HTMLInputElement).value;

@@ -1,0 +1,49 @@
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+
+.modal {
+  background: white;
+  border-radius: var(--radius-mini);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  width: 280px;
+}
+
+.successIcon {
+  width: 64px;
+  height: 64px;
+}
+
+.modalHead {
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+}
+
+.modalSub {
+  font-size: 14px;
+  color: gray;
+}
+
+.modalBtn {
+  margin-top: 8px;
+  width: 100%;
+  padding: 10px;
+  border-radius: var(--radius-mini);
+  border: none;
+  background-color: var(--primary-blue-dark);
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}

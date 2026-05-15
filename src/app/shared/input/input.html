@@ -1,1 +1,2 @@
-<input (input)="formatCardNumber($event); formatExpiry($event); formatCvv($event)" [maxLength]="maxLength()" [type]="inputType()" class="inputFoodNote" type="text" [value]="value()" [placeholder]="placeholder()">
+<input (input)="onInput($event)" [maxLength]="maxLength()" [type]="inputType()" class="inputFoodNote"
+     [placeholder]="placeholder()">

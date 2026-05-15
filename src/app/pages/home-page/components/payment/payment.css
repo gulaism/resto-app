@@ -10,6 +10,16 @@
   height: 100vh;
   width: 409px;
   color: white;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.bgDark {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
 }
 
 .backButton {
@@ -100,31 +110,118 @@
 }
 
 .cardHolder {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 130%;
-    margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  margin-bottom: 8px;
 }
 
 .cardInput {
-    margin-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 .cardNumberInput {
-    margin-bottom: 24px;
+  margin-bottom: 24px;
 }
 
 .cardDetails {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-    gap: 13px;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 130%;   
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  gap: 13px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  margin-bottom: 16px;
 }
 
 .detailHead {
-    margin-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+.orderType {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 13px;
+  width: 100%;
+  padding-top: 16px;
+  border-top: 1px solid var(--blue-border);
+  margin-bottom: 16px;
+}
+
+.typeHead {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  margin-bottom: 8px;
+}
+
+.typeLeft {
+  width: 100%;
+}
+
+.selectedOption {
+  border: 1px solid var(--blue-border);
+  border-radius: var(--radius-mini);
+  padding: 14px;
+  color: var(--primary-white);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  width: 50%;
+}
+
+.selectedOption.extraDiv {
+  width: 100%;
+}
+
+.paymentBtns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  margin-top: auto;
+}
+
+.cancelBtn {
+  width: 100%;
+  border: 1px solid var(--primary-orange);
+  background-color: transparent;
+  border-radius: var(--radius-mini);
+  padding: 14px 0;
+  color: var(--primary-orange);
+}
+
+.paymentConfirmBtn {
+  width: 100%;
+  padding: 14px 0;
+  background-color: var(--primary-orange);
+  border-radius: var(--radius-mini);
+  border: 1px solid transparent;
+  color: var(--secondary-white);
+}
+
+.scrollComp {
+  max-height: 21dvh;
+  overflow-y: scroll;
+}
+
+.disabledConfirm {
+    background-color: var(--blue-border);
+    border-color: var(--blue-border);
+    cursor: not-allowed;
+}
+
+@media (min-height: 780px) {
+  .scrollComp {
+    max-height: unset; /* removes the cap */
+    flex: 1; /* takes all available space naturally */
+    overflow-y: hidden; /* no scroll needed */
+  }
 }

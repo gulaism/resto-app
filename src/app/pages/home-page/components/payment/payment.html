@@ -1,46 +1,88 @@
 <div class="paymentDiv">
-    <div class="backButton" (click)="goBack.emit()"><img class="backButtonImg" src="../../../../../assets/Back.svg" alt="Go back to orders"></div>
+    <div class="backButton" (click)="goBack.emit()"><img class="backButtonImg" src="../../../../../assets/Back.svg"
+            alt="Go back to orders"></div>
     <div class="paymentHead">Confirmation</div>
     <div class="paymentInfo">1 payment method available</div>
     <div class="methodHead">Payment Method</div>
     <div class="paymentMethods">
-        <div class="crCard" [class.activeMethod]="chosenMethod() === 'creditCard'" (click)="chosenMethod.set('creditCard')">
-            <div class="methodIcon"><img class="methodIconImg" src="../../../../../assets/Card.svg" alt="Pay with Credit Card"></div>
+        <div class="crCard" [class.activeMethod]="chosenMethod() === 'creditCard'"
+            (click)="chosenMethod.set('creditCard')">
+            <div class="methodIcon"><img class="methodIconImg" src="../../../../../assets/Card.svg"
+                    alt="Pay with Credit Card"></div>
             <div>Credit Card</div>
             @if (chosenMethod() === 'creditCard') {
-                <div class="checkMark"><img class="checkMarkImg" src="../../../../../assets/checkmark-circle.svg" alt=""></div>
+            <div class="checkMark"><img class="checkMarkImg" src="../../../../../assets/checkmark-circle.svg" alt="">
+            </div>
             }
         </div>
         <div class="crCard" [class.activeMethod]="chosenMethod() === 'paypal'" (click)="chosenMethod.set('paypal')">
-            <div class="methodIcon"><img class="methodIconImg" src="../../../../../assets/Paypal.svg" alt="Pay with Paypal"></div>
+            <div class="methodIcon"><img class="methodIconImg" src="../../../../../assets/Paypal.svg"
+                    alt="Pay with Paypal"></div>
             <div>Paypal</div>
             @if (chosenMethod() === 'paypal') {
-                <div class="checkMark"><img class="checkMarkImg" src="../../../../../assets/checkmark-circle.svg" alt=""></div>
+            <div class="checkMark"><img class="checkMarkImg" src="../../../../../assets/checkmark-circle.svg" alt="">
+            </div>
             }
-        </div><div class="crCard" [class.activeMethod]="chosenMethod() === 'cash'" (click)="chosenMethod.set('cash')">
-            <div class="methodIcon"><img class="methodIconImg" src="../../../../../assets/Wallet.svg" alt="Pay cash"></div>
+        </div>
+        <div class="crCard" [class.activeMethod]="chosenMethod() === 'cash'" (click)="chosenMethod.set('cash')">
+            <div class="methodIcon"><img class="methodIconImg" src="../../../../../assets/Wallet.svg" alt="Pay cash">
+            </div>
             <div>Cash</div>
             @if (chosenMethod() === 'cash') {
-                <div class="checkMark"><img class="checkMarkImg" src="../../../../../assets/checkmark-circle.svg" alt=""></div>
+            <div class="checkMark"><img class="checkMarkImg" src="../../../../../assets/checkmark-circle.svg" alt="">
+            </div>
             }
         </div>
     </div>
-    <div class="cardHolder">Cardholder Name</div>
-    <div class="cardInput">
-        <app-input placeholder="Levi Ackerman" />
-    </div>
-    <div class="cardHolder">Card Number</div>
-    <div class="cardNumberInput">
-        <app-input [isCardInput]="true" [maxLength]="19" placeholder="1234 5678 9012 3456" />
-    </div>
-    <div class="cardDetails">
-        <div class="expDate">
-            <div class="detailHead">Expiration Date</div>
-            <app-input [isExpiryInput]="true" placeholder="04/26" />
+    @if (chosenMethod() === 'creditCard') {
+        <div class="suportedMethod">
+            <div class="scrollComp">
+                <div class="cardHolder">Cardholder Name</div>
+                <div class="cardInput">
+                    <app-input placeholder="Levi Ackerman" (valueChange)="cardHolder.set($event)" />
+                </div>
+                <div class="cardHolder">Card Number</div>
+                <div class="cardNumberInput">
+                    <app-input [isCardInput]="true" [maxLength]="19" placeholder="1234 5678 9012 3456" (valueChange)="cardNumber.set($event)"/>
+                </div>
+                <div class="cardDetails">
+                    <div class="expDate">
+                        <div class="detailHead">Expiration Date</div>
+                        <app-input [isExpiryInput]="true" placeholder="04/26" (valueChange)="expiryDate.set($event)"/>
+                    </div>
+                    <div class="expDate">
+                        <div class="detailHead">CVV</div>
+                        <app-input [isCvvInput]="true" inputType="password" placeholder="123" (valueChange)="cvv.set($event)" />
+                    </div>
+                </div>
+            </div>
+            <div class="orderType">
+                <div class="typeLeft">
+                    <div class="typeHead">Order Type</div>
+                    <div class="selectedOption" [class.extraDiv]="chosenOrderType() === 0">
+                        @if(chosenOrderType() === 0) {Dine In}
+                        @else if(chosenOrderType() === 1) {To Go}
+                        @else if(chosenOrderType() === 2) {Delivery}
+                    </div>
+                </div>
+                @if(chosenOrderType() === 0) {
+                <div class="typeLeft">
+                    <div class="typeHead">Table no.</div>
+                    <app-input placeholder="1" (valueChange)="tableNo.set($event)"/>
+                </div>
+                }
+            </div>
         </div>
-        <div class="expDate">
-            <div class="detailHead">CVV</div>
-            <app-input [isCvvInput]="true" inputType="password" placeholder="123" />
-        </div>
+    } @else {
+        <div class="nonSupported">Not Supported</div>
+    }
+
+    <div class="paymentBtns">
+        <button class="cancelBtn" (click)="goBack.emit()">Cancel</button>
+        <button class="paymentConfirmBtn" [class.disabledConfirm]="chosenMethod() !== 'creditCard'" [disabled]="chosenMethod() !== 'creditCard'" (click)="confirmPayment()">Confirm Payment</button>
     </div>
 </div>
+@if (showSuccessModel()) {
+    <app-success-modal (close)="onSuccessClose()" />
+}
+<div class="bgDark"></div>

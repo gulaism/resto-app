@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -14,6 +14,16 @@ export class Input {
   isCardInput = input<boolean>(false);
   isExpiryInput = input<boolean>(false);
   isCvvInput = input<boolean>(false);
+
+  valueChange = output<string>();
+
+  onInput(event: Event) {
+    this.formatCardNumber(event);
+    this.formatExpiry(event);
+    this.formatCvv(event);
+    const value = (event.target as HTMLInputElement).value;
+    this.valueChange.emit(value);
+  }
 
   formatCardNumber(event: Event) {
     if(!this.isCardInput()) return;

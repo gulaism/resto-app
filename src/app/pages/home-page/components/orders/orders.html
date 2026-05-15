@@ -1,5 +1,5 @@
 @if(isConfirmed() && subTotal() !== 0) {
-<app-payment (goBack)="isConfirmed.set(false)"/>
+<app-payment (goBack)="isConfirmed.set(false)" (clearOrders)="clearAllOrders()" [chosenOrderType]="activeIndex()" (goBack)="isConfirmed.set(false)"/>
 } @else {
 <div class="orders">
     <div class="ordersHead">Orders #34562</div>
