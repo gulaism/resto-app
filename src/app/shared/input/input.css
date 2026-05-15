@@ -16,3 +16,10 @@
 .inputFoodNote::placeholder {
     color: var(--input-gray);
 }
+
+.inputFoodNote[type="password"] {
+    -webkit-text-security: disc;
+    letter-spacing: 8px;
+    font-size: 13px;
+}
+
