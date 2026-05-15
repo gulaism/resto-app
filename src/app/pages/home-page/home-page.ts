@@ -3,10 +3,11 @@ import { CurrencyPipe, DatePipe } from '@angular/common';
 import { Food, Product, Products } from '../../services/food';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Orders } from './components/orders/orders';
+import { Card } from "../../shared/card/card";
 
 @Component({
   selector: 'app-home-page',
-  imports: [DatePipe, CurrencyPipe, Orders],
+  imports: [DatePipe, CurrencyPipe, Orders, Card],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
 })

@@ -8,7 +8,8 @@
             <div class="search">
                 <div class="searchIcon"><img class="searchIconImg" src="../../../assets/search.svg" alt="Search input">
                 </div>
-                <input #searchInput class="searchInput" placeholder="Search for food, coffee, etc..." type="search" (input)="searchData($event)">
+                <input #searchInput class="searchInput" placeholder="Search for food, coffee, etc..." type="search"
+                    (input)="searchData($event)">
             </div>
         </div>
         <div class="categories">
@@ -21,20 +22,16 @@
         <div class="parag">Choose Dishes</div>
         <div class="cards">
             @if (this.filteredData().length !== 0) {
-                @for (prod of this.filteredData(); track $index) {
-                    @if (this.activeCat().trim() === prod.category.trim()) {
-                    <div (click)="orderedData(prod)" class="card">
-                        <div class="prodPhoto"><img class="prodImg" src="/assets/{{prod.image}}" alt="{{prod.name}} Photo"></div>
-                        <div class="prodName">{{prod.name}}</div>
-                        <span class="prodPrice">{{prod.price | currency}}</span>
-                        <div class="prodStock">{{prod.availableNum}} Bowls available</div>
-                    </div>
-                    }
-                }
+            @for (prod of this.filteredData(); track $index) {
+            @if (this.activeCat().trim() === prod.category.trim()) {
+            <app-card [product]="prod" (cardClicked)="orderedData($event)" />
+            }
+            }
             } @else {
-                <div class="notExistText">Searched product doesn't exist in this category :D</div>
+            <div class="notExistText">Searched product doesn't exist in this category :D</div>
             }
         </div>
     </div>
-    <app-orders (clearOrders)="onClearOrders()" [orderedItems]="this.orderedItems()" (updateQuantity)="onUpdateQuantity($event)" (removeItem)="onRemoveItem($event)"/>
+    <app-orders (clearOrders)="onClearOrders()" [orderedItems]="this.orderedItems()"
+        (updateQuantity)="onUpdateQuantity($event)" (removeItem)="onRemoveItem($event)" />
 </div>

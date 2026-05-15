@@ -1,0 +1,8 @@
+<div (click)="cardClicked.emit(product())" class="card">
+    <div class="prodPhoto">
+        <img class="prodImg" src="/assets/{{product().image}}" alt="{{product().name}} Photo">
+    </div>
+    <div class="prodName">{{product().name}}</div>
+    <span class="prodPrice">{{product().price | currency}}</span>
+    <div class="prodStock">{{product().availableNum}} Bowls available</div>
+</div>
