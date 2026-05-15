@@ -1,0 +1,15 @@
+.paymentDiv {
+    padding: 24px;
+    border-bottom-left-radius: var(--radius-mini);
+    border-top-left-radius: var(--radius-mini);
+    background-color: var(--primary-blue-dark);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    line-height: 140%;
+    color: white;
+    width: 409px;
+}

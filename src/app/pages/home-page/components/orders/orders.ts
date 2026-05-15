@@ -3,10 +3,11 @@ import { Button } from '../../../../shared/button/button';
 import { CurrencyPipe } from '@angular/common';
 import { Input } from '../../../../shared/input/input';
 import { Product, Products } from '../../../../services/food';
+import { Payment } from "../payment/payment";
 
 @Component({
   selector: 'app-orders',
-  imports: [Button, CurrencyPipe, Input],
+  imports: [Button, CurrencyPipe, Input, Payment],
   templateUrl: './orders.html',
   styleUrl: './orders.css',
 })
@@ -16,6 +17,9 @@ export class Orders {
   updateQuantity = output<{id: number; quantity: number}>();
   fees = [0, 1, 5]; // dine in, to go, delivery
   removeItem = output<number>();
+
+  isConfirmed = signal<boolean>(false);
+
 
   onQtyChange(event: Event, item: Product) {
     let value = +(event.target as HTMLInputElement).value;

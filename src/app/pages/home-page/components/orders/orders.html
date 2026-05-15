@@ -1,3 +1,6 @@
+@if(isConfirmed() && subTotal() !== 0) {
+<app-payment (goBack)="isConfirmed.set(false)"/>
+} @else {
 <div class="orders">
     <div class="ordersHead">Orders #34562</div>
     <div class="orderOptions">
@@ -6,41 +9,44 @@
         <app-button [isActive]="activeIndex() === 2" (click)="setActiveOption(2)" buttonContent="delivery" />
     </div>
     @if (orderedItems().length !== 0) {
-        <div class="tableHeader">
-            <div>Item</div>
-            <div class="tabHeadRight">
-                <div>Qty</div>
-                <div>Price</div>
-            </div>
+    <div class="tableHeader">
+        <div>Item</div>
+        <div class="tabHeadRight">
+            <div>Qty</div>
+            <div>Price</div>
         </div>
-        <div class="ordersTable">
-            @for (item of orderedItems(); track $index) {
-            <div class="foodType">
-                <div class="foodUp">
-                    <div class="foodDetails">
-                        <div class="foodPhoto"><img class="foodPhotoImg" src="assets/{{item.image}}" alt="Chosen Food's Photo">
-                        </div>
-                        <div class="foodInfo">
-                            <div class="foodName">{{item.name}}</div>
-                            <span class="foodMenuPrice">{{item.price| currency}}</span>
-                        </div>
+    </div>
+    <div class="ordersTable">
+        @for (item of orderedItems(); track $index) {
+        <div class="foodType">
+            <div class="foodUp">
+                <div class="foodDetails">
+                    <div class="foodPhoto"><img class="foodPhotoImg" src="assets/{{item.image}}"
+                            alt="Chosen Food's Photo">
                     </div>
-                    <div class="foodCalc">
-                        <input [class.limitedReached]="(item.quantity ?? 1) >= item.availableNum" class="foodQty" type="number" [value]="item.quantity ?? 1" (input)="onQtyChange($event, item)">
-                        <span class="foodCalcPrice">{{item.price * (item.quantity ?? 1) | currency}}</span>
+                    <div class="foodInfo">
+                        <div class="foodName">{{item.name}}</div>
+                        <span class="foodMenuPrice">{{item.price| currency}}</span>
                     </div>
                 </div>
-                <div class="foodDown">
-                    <app-input placeholder="Order Note..." />
-                    <button (click)="removeItem.emit(item.id)" class="deleteBtn"><img class="deleteBtnImg" src="assets/Trash.svg" alt="Delete"></button>
+                <div class="foodCalc">
+                    <input [class.limitedReached]="(item.quantity ?? 1) >= item.availableNum" class="foodQty"
+                        type="number" [value]="item.quantity ?? 1" (input)="onQtyChange($event, item)">
+                    <span class="foodCalcPrice">{{item.price * (item.quantity ?? 1) | currency}}</span>
                 </div>
             </div>
-            }
+            <div class="foodDown">
+                <app-input placeholder="Order Note..." />
+                <button (click)="removeItem.emit(item.id)" class="deleteBtn"><img class="deleteBtnImg"
+                        src="assets/Trash.svg" alt="Delete"></button>
+            </div>
         </div>
+        }
+    </div>
     } @else {
-        <div class="noItemsDiv">No items</div>
+    <div class="noItemsDiv">No items</div>
     }
-        
+
     <div class="totalCalc">
         <div class="discountDiv">
             <div class="discountHead">Additional fee</div>
@@ -51,5 +57,7 @@
             <div class="discountPrice">{{total() | currency}}</div>
         </div>
     </div>
-    <button class="orderSubmitBtn">Continue to Payment</button>
+    <button class="orderSubmitBtn" [class.disabledConfirmBtn]="subTotal() === 0" [disabled]="orderedItems().length === 0" (click)="isConfirmed.set(true)">Continue to
+        Payment</button>
 </div>
+}

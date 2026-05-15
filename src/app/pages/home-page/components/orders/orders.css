@@ -206,3 +206,8 @@
 .limitedReached {
     border: 2px solid red;
 }
+
+.disabledConfirmBtn {
+    background-color: var(--blue-border);
+    color: var(--input-gray);
+}
