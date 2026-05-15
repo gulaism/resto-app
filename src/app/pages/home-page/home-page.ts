@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, ElementRef, inject, signal, viewChild } from '@angular/core';
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { Food, Product, Products } from '../../services/food';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -17,6 +17,8 @@ export class HomePage {
   searchedItem = signal<string>('');
   orderedItems = signal<Products>([]);
   private foodService = inject(Food);
+
+  searchInput = viewChild<ElementRef<HTMLInputElement>>('searchInput');
 
   constructor() {
     this.foodService
@@ -58,12 +60,16 @@ export class HomePage {
       this.orderedItems.update((items) => [...items, { ...product, quantity: 1 }]);
     }
 
-    // this.orderedItems.update(items => [...items, product]);
-    // console.log(this.orderedItems());
   }
   onUpdateQuantity(event: { id: number; quantity: number }) {
     this.orderedItems.update((items) =>
       items.map((item) => (item.id === event.id ? { ...item, quantity: event.quantity } : item)),
     );
+  }
+
+  onClearOrders() {
+    this.orderedItems.set([]);
+    this.searchedItem.set('');
+    this.searchInput()!.nativeElement.value = '';
   }
 }

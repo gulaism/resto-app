@@ -8,7 +8,7 @@
             <div class="search">
                 <div class="searchIcon"><img class="searchIconImg" src="../../../assets/search.svg" alt="Search input">
                 </div>
-                <input class="searchInput" placeholder="Search for food, coffee, etc..." type="search" (input)="searchData($event)">
+                <input #searchInput class="searchInput" placeholder="Search for food, coffee, etc..." type="search" (input)="searchData($event)">
             </div>
         </div>
         <div class="categories">
@@ -36,5 +36,5 @@
             }
         </div>
     </div>
-    <app-orders (clearOrders)="this.orderedItems.set([])" [orderedItems]="this.orderedItems()" (updateQuantity)="onUpdateQuantity($event)" (removeItem)="onRemoveItem($event)"/>
+    <app-orders (clearOrders)="onClearOrders()" [orderedItems]="this.orderedItems()" (updateQuantity)="onUpdateQuantity($event)" (removeItem)="onRemoveItem($event)"/>
 </div>
