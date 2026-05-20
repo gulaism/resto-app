@@ -1,24 +1,28 @@
 <div class="sideBar">
-        <a routerLink="/" class="logo" (click)="activeLink.set('home')"><img class="logoIcon" src="/../../../assets/logo.svg"
-                        alt="Logo"></a>
+        <a routerLink="/" class="logo">
+                <img class="logoIcon" src="assets/logo.svg" alt="Logo">
+        </a>
         <div class="sideButtons">
-                <a routerLink="/" [class.active]="activeLink() === 'home'" (click)="activeLink.set('home')" class="navLink"><img
-                                class="navIcon"
-                                [src]="activeLink() === 'home' ? '../../../assets/HomeWhite.svg' : '../../../assets/HomeOrange.svg'"
-                                alt="Home"></a>
-                <div [class.active]="activeLink() === 'discount'" (click)="activeLink.set('discount')" class="navLink">
-                        <img class="navIcon" src="../../../assets/Discount.svg" alt="Discount"></div>
-                <div [class.active]="activeLink() === 'dashboard'" (click)="activeLink.set('dashboard')"
-                        class="navLink"><img class="navIcon" src="../../../assets/Dashboard.svg" alt="Dashboard"></div>
-                <div [class.active]="activeLink() === 'message'" (click)="activeLink.set('message')" class="navLink">
-                        <img class="navIcon" src="../../../assets/Message.svg" alt="Message"></div>
-                <div [class.active]="activeLink() === 'notification'" (click)="activeLink.set('notification')"
-                        class="navLink">
-                        <img class="navIcon" src="../../../assets/Notification.svg" alt="Notification">
-                </div>
-                <a routerLink="settings" [class.active]="activeLink() === 'setting'" (click)="activeLink.set('setting')" class="navLink">
-                        <img class="navIcon" src="../../../assets/Setting.svg" alt="Setting"></a>
-                <div [class.active]="activeLink() === 'logout'" (click)="activeLink.set('logout')" class="navLink"><img
-                                class="logOutIcon" src="../../../assets/LogOut.svg" alt="LogOut"></div>
+                <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" #homeLink="routerLinkActive" class="navLink">
+                        <img class="navIcon" [src]="homeLink.isActive ? 'assets/HomeWhite.svg' : 'assets/HomeOrange.svg'" alt="Home">
+                </a>
+                <a routerLink="/discount" routerLinkActive="active" class="navLink">
+                        <img class="navIcon" src="assets/Discount.svg" alt="Discount">
+                </a>
+                <a routerLink="/dashboard" routerLinkActive="active" class="navLink">
+                        <img class="navIcon" src="assets/Dashboard.svg" alt="Dashboard">
+                </a>
+                <a routerLink="/messages" routerLinkActive="active" class="navLink">
+                        <img class="navIcon" src="assets/Message.svg" alt="Message">
+                </a>
+                <a routerLink="/notifications" routerLinkActive="active" class="navLink">
+                        <img class="navIcon" src="assets/Notification.svg" alt="Notification">
+                </a>
+                <a routerLink="/settings" routerLinkActive="active" class="navLink">
+                        <img class="navIcon" src="assets/Setting.svg" alt="Setting">
+                </a>
+                <a routerLink="/logout" routerLinkActive="active" class="navLink">
+                        <img class="logOutIcon" src="assets/LogOut.svg" alt="LogOut">
+                </a>
         </div>
 </div>

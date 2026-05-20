@@ -45,7 +45,7 @@
     height: 100%;
 }
 
-.active {
+.navLink.active {
     background-color: var(--secondary-blue-light);
     border-top-left-radius: var(--radius-mid);
     border-bottom-left-radius: var(--radius-mid);

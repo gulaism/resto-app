@@ -9,3 +9,9 @@
     line-height: 140%;
     margin-bottom: 24px;
 }
+
+.mainDivs {
+    display: flex;
+    align-items: start;
+    gap: 24px;
+}

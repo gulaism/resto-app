@@ -1,12 +1,11 @@
-import { Component, signal } from '@angular/core';
-import { RouterLink } from "@angular/router";
+import { Component, inject, signal } from '@angular/core';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive } from "@angular/router";
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css',
-  imports: [RouterLink],
+  imports: [RouterLink, RouterLinkActive],
 })
-export class Sidebar {
-  activeLink = signal<string>('home');
-}
+export class Sidebar {}
