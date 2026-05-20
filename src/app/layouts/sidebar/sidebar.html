@@ -1,11 +1,11 @@
 <div class="sideBar">
-        <div class="logo" (click)="activeLink.set('home')"><img class="logoIcon" src="/../../../assets/logo.svg"
-                        alt="Logo"></div>
+        <a routerLink="/" class="logo" (click)="activeLink.set('home')"><img class="logoIcon" src="/../../../assets/logo.svg"
+                        alt="Logo"></a>
         <div class="sideButtons">
-                <div [class.active]="activeLink() === 'home'" (click)="activeLink.set('home')" class="navLink"><img
+                <a routerLink="/" [class.active]="activeLink() === 'home'" (click)="activeLink.set('home')" class="navLink"><img
                                 class="navIcon"
                                 [src]="activeLink() === 'home' ? '../../../assets/HomeWhite.svg' : '../../../assets/HomeOrange.svg'"
-                                alt="Home"></div>
+                                alt="Home"></a>
                 <div [class.active]="activeLink() === 'discount'" (click)="activeLink.set('discount')" class="navLink">
                         <img class="navIcon" src="../../../assets/Discount.svg" alt="Discount"></div>
                 <div [class.active]="activeLink() === 'dashboard'" (click)="activeLink.set('dashboard')"
@@ -16,8 +16,8 @@
                         class="navLink">
                         <img class="navIcon" src="../../../assets/Notification.svg" alt="Notification">
                 </div>
-                <div [class.active]="activeLink() === 'setting'" (click)="activeLink.set('setting')" class="navLink">
-                        <img class="navIcon" src="../../../assets/Setting.svg" alt="Setting"></div>
+                <a routerLink="settings" [class.active]="activeLink() === 'setting'" (click)="activeLink.set('setting')" class="navLink">
+                        <img class="navIcon" src="../../../assets/Setting.svg" alt="Setting"></a>
                 <div [class.active]="activeLink() === 'logout'" (click)="activeLink.set('logout')" class="navLink"><img
                                 class="logOutIcon" src="../../../assets/LogOut.svg" alt="LogOut"></div>
         </div>
