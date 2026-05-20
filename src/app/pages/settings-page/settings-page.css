@@ -1,0 +1,11 @@
+.settingsDiv {
+    padding: 24px;
+    color: white;
+}
+
+.header {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 140%;
+    margin-bottom: 24px;
+}
