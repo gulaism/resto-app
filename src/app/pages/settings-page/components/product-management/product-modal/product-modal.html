@@ -1,0 +1,78 @@
+@if (isOpen()) {
+<div class="overlay">
+    <div class="modal">
+
+        <div class="modalHead">
+            <h2 class="modalTitle">Add a new item</h2>
+            <p class="modalSub">Upload an image for your product.</p>
+        </div>
+
+        <label class="uploadZone" [class.hasFile]="selectedFile()" for="fileInput">
+            @if (!selectedFile()) {
+            <span class="uploadIcon"><i class="ti ti-cloud-upload"></i></span>
+            <span class="uploadLabel">Click to upload or drag & drop</span>
+            <span class="uploadHint">PNG or JPG only</span>
+            } @else {
+            <span class="uploadIcon selected"><i class="ti ti-circle-check"></i></span>
+            <span class="uploadHint">Click to replace</span>
+            }
+            <input class="fileInput" type="file" id="fileInput" accept=".jpg,.jpeg,.png"
+                (change)="onFileChange($event)" />
+        </label>
+
+        @if(fileError()) {
+        <span class="fileErrorMsg">{{fileError()}}</span>
+        }
+
+        <div class="fields">
+
+            <div class="field">
+                <label class="fieldLabel" for="itemName">Item name</label>
+                <input class="fieldInput" type="text" id="itemName" placeholder="e.g. Margherita Pizza"
+                    [value]="itemName()" (input)="itemName.set($any($event.target).value)" />
+            </div>
+
+            <div class="fieldRow">
+                <div class="field">
+                    <label class="fieldLabel" for="itemPrice">Price</label>
+                    <div class="inputWrapper">
+                        <span class="inputPrefix">$</span>
+                        <input class="priceInput fieldInput prefixed" type="number" id="itemPrice" placeholder="0.00"
+                            min="0" step="0.01" [value]="itemPrice()"
+                            (input)="itemPrice.set(+$any($event.target).value)" />
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="fieldLabel" for="itemStock">Available stock</label>
+                    <input class="priceInput fieldInput" type="number" id="itemStock" placeholder="1" min="1" step="1"
+                        [value]="itemStock()" (input)="onStockInput($event)" />
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="fieldLabel">Category</label>
+                <div class="categoryGroup">
+                    <button type="button" class="categoryBtn" [class.active]="itemCategory() === 'hot dishes'"
+                        (click)="itemCategory.set('hot dishes')">Hot dishes</button>
+                    <button type="button" class="categoryBtn" [class.active]="itemCategory() === 'cold dishes'"
+                        (click)="itemCategory.set('cold dishes')">Cold dishes</button>
+                    <button type="button" class="categoryBtn" [class.active]="itemCategory() === 'soup'"
+                        (click)="itemCategory.set('soup')">Soup</button>
+                </div>
+            </div>
+
+        </div>
+
+        @if(formError()) {
+        <span class="fileErrorMsg">{{formError()}}</span>
+        }
+
+        <div class="buttons">
+            <button class="discardBtn" (click)="close()">Discard changes</button>
+            <button class="saveBtn" (click)="onSave()">Save changes</button>
+        </div>
+
+    </div>
+</div>
+}

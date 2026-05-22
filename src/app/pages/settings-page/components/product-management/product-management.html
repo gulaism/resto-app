@@ -5,7 +5,7 @@
     <div class="category">Soup</div>
 </div>
 <div class="products">
-    <div class="newProd">
+    <div class="newProd" (click)="isModalOpen.set(true)">
         <div class="plus">+</div>
         <div class="addText">Add new dish</div>
     </div>
@@ -25,7 +25,8 @@
     </div>
     }
 </div>
-<div class="buttons">
-    <button class="discardBtn">Discard Changes</button>
-    <button class="saveBtn">Save Changes</button>
-</div>
+
+<app-product-modal 
+    [isOpen]="isModalOpen()"
+    (closed)="isModalOpen.set(false)"
+/>

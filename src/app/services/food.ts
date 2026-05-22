@@ -312,4 +312,12 @@ export class Food {
   getProducts(): Observable<Products> {
     return of(this.mockProducts);
   }
+
+  addProduct(product: Omit<Product, 'id'>): void {
+    const newProduct: Product = {
+      ...product,
+      id: this.mockProducts.length + 1,
+    };
+    this.mockProducts.unshift(newProduct);
+  }
 }
