@@ -3,7 +3,7 @@ import { CurrencyPipe, DatePipe } from '@angular/common';
 import { Food, Product, Products } from '../../services/food';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Orders } from './components/orders/orders';
-import { Card } from "../../shared/card/card";
+import { Card } from '../../shared/card/card';
 
 @Component({
   selector: 'app-home-page',
@@ -26,7 +26,6 @@ export class HomePage {
       .getProducts()
       .pipe(takeUntilDestroyed())
       .subscribe((response) => this.data.set(response));
-    console.log(this.data());
   }
 
   filteredData = computed(() => {
@@ -39,7 +38,7 @@ export class HomePage {
   });
 
   onRemoveItem(id: number) {
-    this.orderedItems.update(items => items.filter(item => item.id !== id));
+    this.orderedItems.update((items) => items.filter((item) => item.id !== id));
   }
 
   searchData(event: Event) {
@@ -60,7 +59,6 @@ export class HomePage {
     } else {
       this.orderedItems.update((items) => [...items, { ...product, quantity: 1 }]);
     }
-
   }
   onUpdateQuantity(event: { id: number; quantity: number }) {
     this.orderedItems.update((items) =>

@@ -1,1 +1,31 @@
-<p>product-management works!</p>
+<div class="title">Products Management</div>
+<div class="categories">
+    <div class="category active">Hot Dishes</div>
+    <div class="category">Cold Dishes</div>
+    <div class="category">Soup</div>
+</div>
+<div class="products">
+    <div class="newProd">
+        <div class="plus">+</div>
+        <div class="addText">Add new dish</div>
+    </div>
+    @for (prod of data(); track $index) {
+    <div class="prod">
+        <div class="prodPhoto"><img class="prodPhotoImg" src="assets/{{prod.image}}" alt="{{prod.name}}"></div>
+        <div class="dishTitle">{{prod.name}}</div>
+        <div class="dishDetails">
+            <div class="dishPrice">{{prod.price | currency}}</div>
+            <div class="sepCircle"></div>
+            <div class="available">{{prod.availableNum}} Bowls</div>
+        </div>
+        <div class="editDiv">
+            <div><img src="/assets/icons/Edit.svg" alt="Edit icon"></div>
+            <div class="editText">Edit dish</div>
+        </div>
+    </div>
+    }
+</div>
+<div class="buttons">
+    <button class="discardBtn">Discard Changes</button>
+    <button class="saveBtn">Save Changes</button>
+</div>

@@ -1,6 +1,16 @@
+:host {
+    height: 100vh;
+    display: block;
+    overflow: hidden;
+}
+
 .settingsDiv {
     padding: 24px;
     color: white;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
@@ -8,10 +18,14 @@
     font-size: 28px;
     line-height: 140%;
     margin-bottom: 24px;
+    flex-shrink: 0;
 }
 
 .mainDivs {
     display: flex;
-    align-items: start;
+    align-items: stretch;
     gap: 24px;
+    flex: 1;
+    overflow: hidden;
+    min-height: 0;
 }

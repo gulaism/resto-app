@@ -124,6 +124,7 @@
 }
 
 .activeCat::after {
+  
   content: "";
   background: var(--primary-orange);
   position: absolute;

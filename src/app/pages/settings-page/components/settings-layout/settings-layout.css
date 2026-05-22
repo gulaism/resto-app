@@ -3,9 +3,8 @@
 :host {
     width: 275px;
     overflow-x: hidden;
-}
-
-.sideDiv {
+    height: 100%;
+    display: block;
     background-color: var(--primary-blue-dark);
     border-radius: var(--radius-mini);
 }
@@ -13,7 +12,6 @@
 .sideItem {
     display: flex;
     align-items: start;
-
     gap: 8px;
     padding: 24px 0 24px 24px;
     cursor: pointer;
