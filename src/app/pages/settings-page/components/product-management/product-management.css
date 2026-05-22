@@ -1,0 +1,7 @@
+@import '../../../../../styles/variables.css';
+
+:host {
+    flex: 1;
+    background-color: var(--primary-blue-dark);
+    width: 100%;
+}

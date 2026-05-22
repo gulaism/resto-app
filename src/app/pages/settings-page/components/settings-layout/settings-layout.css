@@ -1,7 +1,8 @@
 @import "../../../../../styles/variables.css";
 
 :host {
-    flex: 1;
+    width: 275px;
+    overflow-x: hidden;
 }
 
 .sideDiv {
@@ -12,8 +13,10 @@
 .sideItem {
     display: flex;
     align-items: start;
+
     gap: 8px;
     padding: 24px 0 24px 24px;
+    cursor: pointer;
 }
 
 .optionIcon {
@@ -28,6 +31,16 @@
     object-fit: contain;
 }
 
-.option {
+.title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    margin-bottom: 4px;
+}
 
+.description {
+    color: var(--tertiary-blue-text);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
 }
