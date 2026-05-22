@@ -1,5 +1,5 @@
 <div class="sideDiv">
-    <div class="sideItem">
+    <div class="sideItem" [class.activeOption]="selectedPage() === 'appearance'" (click)="selectedPage.set('appearance')">
         <div class="optionIcon">
             <img class="optionIconImg" src="../../../../../assets/icons/Appereance.svg" alt="">
         </div>
@@ -8,7 +8,7 @@
             <div class="description">Dark and Light mode, Font size</div>
         </div>
     </div>
-    <div class="sideItem">
+    <div class="sideItem" [class.activeOption]="selectedPage() === 'resto'" (click)="selectedPage.set('resto')">
         <div class="optionIcon">
             <img class="optionIconImg" src="../../../../../assets/icons/Restaurant.svg" alt="">
         </div>
@@ -17,16 +17,16 @@
             <div class="description">Dark and Light mode, Font size</div>
         </div>
     </div>
-    <div class="sideItem">
+    <div class="sideItem" [class.activeOption]="selectedPage() === 'management'" (click)="selectedPage.set('management')">
         <div class="optionIcon">
-            <img class="optionIconImg" src="../../../../../assets/icons/discount-1.svg" alt="">
+            <img class="optionIconImg" [src]="selectedPage() === 'management' ? '../../../../../assets/icons/Discount (2).svg' : '../../../../../assets/icons/discount-1.svg'" alt="">
         </div>
         <div>
             <div class="title">Products Management</div>
             <div class="description">Manage your product, pricing, etc</div>
         </div>
     </div>
-    <div class="sideItem">
+    <div class="sideItem" [class.activeOption]="selectedPage() === 'notification'" (click)="selectedPage.set('notification')">
         <div class="optionIcon">
             <img class="optionIconImg" src="../../../../../assets/icons/Notification.svg" alt="">
         </div>
@@ -35,7 +35,7 @@
             <div class="description">Customize your notifications</div>
         </div>
     </div>
-    <div class="sideItem">
+    <div class="sideItem" [class.activeOption]="selectedPage() === 'security'" (click)="selectedPage.set('security')">
         <div class="optionIcon">
             <img class="optionIconImg" src="../../../../../assets/icons/Security.svg" alt="">
         </div>
@@ -44,7 +44,7 @@
             <div class="description">Configure Password, PIN, etc</div>
         </div>
     </div>
-    <div class="sideItem">
+    <div class="sideItem" [class.activeOption]="selectedPage() === 'about'" (click)="selectedPage.set('about')">
         <div class="optionIcon">
             <img class="optionIconImg" src="../../../../../assets/icons/About Us.svg" alt="">
         </div>

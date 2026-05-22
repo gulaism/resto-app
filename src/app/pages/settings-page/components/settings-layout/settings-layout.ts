@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-settings-layout',
@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './settings-layout.html',
   styleUrl: './settings-layout.css',
 })
-export class SettingsLayout {}
+export class SettingsLayout {
+  selectedPage = signal<string>('management');
+}

@@ -17,6 +17,23 @@
     cursor: pointer;
 }
 
+.sideItem.activeOption {
+    background-color: rgba(234, 124, 105, 0.26);
+    position: relative;
+    color: var(--primary-orange);
+}
+
+.sideItem.activeOption::after {
+    position: absolute;
+    content: '';
+    right: 0;
+    top: 25%;
+    height: 50%;
+    background-color: var(--primary-orange);
+    width: 4px;
+    border-radius: 3px;
+}
+
 .optionIcon {
     width: 16px;
     height: 16px;

@@ -13,7 +13,6 @@ import { Button } from "../../../../shared/button/button";
 export class ProductManagement {
   data = signal<Products>([]);
   private foodService = inject(Food);
-  selectedPage = signal<string>('management');
 
   constructor() {
     this.foodService
