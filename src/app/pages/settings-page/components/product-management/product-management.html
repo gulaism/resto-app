@@ -1,15 +1,15 @@
 <div class="title">Products Management</div>
 <div class="categories">
-    <div class="category active">Hot Dishes</div>
-    <div class="category">Cold Dishes</div>
-    <div class="category">Soup</div>
+    <div class="category" [class.active]="selectedCat() === 'hot dishes'" (click)="selectedCat.set('hot dishes')">Hot Dishes</div>
+    <div class="category" [class.active]="selectedCat() === 'cold dishes'" (click)="selectedCat.set('cold dishes')">Cold Dishes</div>
+    <div class="category" [class.active]="selectedCat() === 'soup'" (click)="selectedCat.set('soup')">Soup</div>
 </div>
 <div class="products">
     <div class="newProd" (click)="isModalOpen.set(true)">
         <div class="plus">+</div>
         <div class="addText">Add new dish</div>
     </div>
-    @for (prod of data(); track $index) {
+    @for (prod of filteredCategory(); track $index) {
     <div class="prod">
         <div class="prodPhoto"><img class="prodPhotoImg" [src]="prod.image | imageSrc" alt="{{prod.name}}"></div>
         <div class="dishTitle">{{prod.name}}</div>
