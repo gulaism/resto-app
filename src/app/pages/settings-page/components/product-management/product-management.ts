@@ -4,10 +4,11 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CurrencyPipe } from '@angular/common';
 import { Button } from "../../../../shared/button/button";
 import { ProductModal } from "./product-modal/product-modal";
+import { ImageSrcPipe } from '../../../../shared/pipes/image-src-pipe';
 
 @Component({
   selector: 'app-product-management',
-  imports: [CurrencyPipe, ProductModal],
+  imports: [CurrencyPipe, ProductModal, ImageSrcPipe],
   templateUrl: './product-management.html',
   styleUrl: './product-management.css',
 })

@@ -11,7 +11,7 @@
     </div>
     @for (prod of data(); track $index) {
     <div class="prod">
-        <div class="prodPhoto"><img class="prodPhotoImg" src="assets/{{prod.image}}" alt="{{prod.name}}"></div>
+        <div class="prodPhoto"><img class="prodPhotoImg" [src]="prod.image | imageSrc" alt="{{prod.name}}"></div>
         <div class="dishTitle">{{prod.name}}</div>
         <div class="dishDetails">
             <div class="dishPrice">{{prod.price | currency}}</div>

@@ -1,6 +1,6 @@
 <div (click)="cardClicked.emit(product())" class="card">
     <div class="prodPhoto">
-        <img class="prodImg" src="/assets/{{product().image}}" alt="{{product().name}} Photo">
+        <img class="prodImg" [src]="product().image | imageSrc" alt="{{product().name}} Photo">
     </div>
     <div class="prodName">{{product().name}}</div>
     <span class="prodPrice">{{product().price | currency}}</span>

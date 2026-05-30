@@ -11,6 +11,7 @@ export class ProductModal {
   isOpen = input<boolean>(false);
   closed = output<void>();
   selectedFile = signal<File|null>(null);
+  previewUrl = signal<string|null>(null);
   fileError = signal<string|null>(null);
   formError = signal<string|null>(null);
 
@@ -37,6 +38,7 @@ export class ProductModal {
 
     this.fileError.set(null);
     this.selectedFile.set(file);
+    this.previewUrl.set(URL.createObjectURL(file));
   }
 
   onSave() {
@@ -64,7 +66,7 @@ export class ProductModal {
     this.formError.set(null);
     
     this.foodService.addProduct({
-      image: this.selectedFile()!.name,
+      image: this.previewUrl()!,
       name: this.itemName().trim(),
       price: this.itemPrice()!,
       availableNum: this.itemStock()!,
@@ -88,7 +90,8 @@ export class ProductModal {
   }
 
   resetForm() {
-    this.selectedFile.set(null);
+    this.selectedFile.set(null)
+    this.previewUrl.set(null);
     this.itemName.set('');
     this.itemPrice.set(null);
     this.itemStock.set(null);
