@@ -29,7 +29,11 @@ export class ProductManagement {
       });
   }
 
-  filteredCategory = computed(() => {
+  filteredData = computed(() => {
     return this.data().filter((item) => item.category === this.selectedCat());
   })
+
+  addProduct(product: any) {
+    this.foodService.addProduct(product);
+  }
 }

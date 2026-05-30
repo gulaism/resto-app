@@ -9,7 +9,7 @@
         <div class="plus">+</div>
         <div class="addText">Add new dish</div>
     </div>
-    @for (prod of filteredCategory(); track $index) {
+    @for (prod of filteredData(); track $index) {
     <div class="prod">
         <div class="prodPhoto"><img class="prodPhotoImg" [src]="prod.image | imageSrc" alt="{{prod.name}}"></div>
         <div class="dishTitle">{{prod.name}}</div>
@@ -29,4 +29,6 @@
 <app-product-modal 
     [isOpen]="isModalOpen()"
     (closed)="isModalOpen.set(false)"
+    [itemCategory]="selectedCat()"
+    (saved)="addProduct($event)"
 />

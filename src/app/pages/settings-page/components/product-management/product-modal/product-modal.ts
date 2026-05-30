@@ -18,9 +18,10 @@ export class ProductModal {
   itemName = signal<string>('');
   itemPrice = signal<number|null>(null);
   itemStock = signal<number|null>(null);
-  itemCategory = signal<string|null>(null);
+  itemCategory = input<string>();
+  saved = output<any>();
 
-  private foodService = inject(Food);
+  // private foodService = inject(Food);
 
   onFileChange(event: Event) {
     const input = event.target as HTMLInputElement;
@@ -58,20 +59,28 @@ export class ProductModal {
       this.formError.set('Please enter a valid stock number.');
       return;
     }
-    if(!this.itemCategory()) {
-      this.formError.set('Please select a category');
-      return;
-    }
+    // if(!this.itemCategory()) {
+    //   this.formError.set('Please select a category');
+    //   return;
+    // }
 
-    this.formError.set(null);
-    
-    this.foodService.addProduct({
+    this.saved.emit({
       image: this.previewUrl()!,
-      name: this.itemName().trim(),
+      name: this.itemName()!.trim(),
       price: this.itemPrice()!,
       availableNum: this.itemStock()!,
       category: this.itemCategory()!,
-    });
+    })
+
+    // this.formError.set(null);
+    
+    // this.foodService.addProduct({
+    //   image: this.previewUrl()!,
+    //   name: this.itemName().trim(),
+    //   price: this.itemPrice()!,
+    //   availableNum: this.itemStock()!,
+    //   category: this.itemCategory()!,
+    // });
 
     this.resetForm();
     this.close();
@@ -97,7 +106,7 @@ export class ProductModal {
     this.itemStock.set(null);
     this.formError.set(null);
     this.fileError.set(null);
-    this.itemCategory.set(null);
+    // this.itemCategory.set(null);
   }
 
   close() {

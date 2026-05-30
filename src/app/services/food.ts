@@ -1,6 +1,6 @@
 import { DecimalPipe } from '@angular/common';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 export interface Product {
   id: number;
@@ -309,8 +309,10 @@ export class Food {
     },
   ];
 
+  private products$ = new BehaviorSubject<Products>(this.mockProducts);
+
   getProducts(): Observable<Products> {
-    return of(this.mockProducts);
+    return this.products$.asObservable();
   }
 
   addProduct(product: Omit<Product, 'id'>): void {
@@ -319,5 +321,6 @@ export class Food {
       id: this.mockProducts.length + 1,
     };
     this.mockProducts.unshift(newProduct);
+    this.products$.next([...this.mockProducts]);
   }
 }
