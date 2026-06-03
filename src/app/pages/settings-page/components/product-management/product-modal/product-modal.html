@@ -49,19 +49,6 @@
                         [value]="itemStock()" (input)="onStockInput($event)" />
                 </div>
             </div>
-
-            <!-- <div class="field">
-                <label class="fieldLabel">Category</label>
-                <div class="categoryGroup">
-                    <button type="button" class="categoryBtn" [class.active]="itemCategory() === 'hot dishes'"
-                        (click)="itemCategory.set('hot dishes')">Hot dishes</button>
-                    <button type="button" class="categoryBtn" [class.active]="itemCategory() === 'cold dishes'"
-                        (click)="itemCategory.set('cold dishes')">Cold dishes</button>
-                    <button type="button" class="categoryBtn" [class.active]="itemCategory() === 'soup'"
-                        (click)="itemCategory.set('soup')">Soup</button>
-                </div>
-            </div> -->
-
         </div>
 
         @if(formError()) {

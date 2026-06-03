@@ -20,7 +20,7 @@
         </div>
         <div class="editDiv">
             <div><img src="/assets/icons/Edit.svg" alt="Edit icon"></div>
-            <div class="editText">Edit dish</div>
+            <div (click)="onEditClick(prod)" class="editText">Edit dish</div>
         </div>
     </div>
     }
@@ -30,5 +30,6 @@
     [isOpen]="isModalOpen()"
     (closed)="isModalOpen.set(false)"
     [itemCategory]="selectedCat()"
-    (saved)="addProduct($event)"
+    (saved)="onProductSaved($event)"
+    [editProduct]="selectedProduct()"
 />

@@ -323,4 +323,12 @@ export class Food {
     this.mockProducts.unshift(newProduct);
     this.products$.next([...this.mockProducts]);
   }
+
+  updateProduct(updated: Product): void {
+    const index = this.mockProducts.findIndex(p => p.id === updated.id);
+    if(index !== -1) {
+      this.mockProducts[index] = updated;
+      this.products$.next([...this.mockProducts]);
+    }
+  }
 }

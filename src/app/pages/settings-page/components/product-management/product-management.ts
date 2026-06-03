@@ -1,5 +1,5 @@
 import { Component, computed, inject, signal } from '@angular/core';
-import { Food, Products } from '../../../../services/food';
+import { Food, Product, Products } from '../../../../services/food';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CurrencyPipe } from '@angular/common';
 import { Button } from "../../../../shared/button/button";
@@ -17,7 +17,22 @@ export class ProductManagement {
   isModalOpen = signal<boolean>(false);
   private foodService = inject(Food);
   selectedCat = signal<string>('hot dishes');
-  // filteredData = signal<Products>([]);
+
+  selectedProduct = signal<Product | null>(null);
+
+  onEditClick(product: Product) {
+    this.selectedProduct.set(product);
+    this.isModalOpen.set(true);
+  }
+
+  onProductSaved(product: any) {
+    if(product.id) {
+      this.foodService.updateProduct(product);
+    } else {
+      this.foodService.addProduct(product);
+    }
+    this.selectedProduct.set(null);
+  }
 
   constructor() {
     this.foodService
@@ -25,7 +40,6 @@ export class ProductManagement {
       .pipe(takeUntilDestroyed())
       .subscribe((response) => {
         this.data.set(response);
-        // this.filteredData.set(response.filter(d => d.category === this.selectedCat()))
       });
   }
 

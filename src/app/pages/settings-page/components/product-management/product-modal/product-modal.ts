@@ -1,5 +1,5 @@
-import { Component, inject, input, output, signal } from '@angular/core';
-import { Food } from '../../../../../services/food';
+import { Component, computed, effect, inject, input, output, signal } from '@angular/core';
+import { Product } from '../../../../../services/food';
 
 @Component({
   selector: 'app-product-modal',
@@ -21,7 +21,20 @@ export class ProductModal {
   itemCategory = input<string>();
   saved = output<any>();
 
-  // private foodService = inject(Food);
+  editProduct = input<Product | null>(null);
+  isEditMode = computed(() => this.editProduct() !== null);
+
+  constructor() {
+    effect(() => {
+      const product = this.editProduct();
+      if(product) {
+        this.itemName.set(product.name);
+        this.itemPrice.set(product.price);
+        this.itemStock.set(product.availableNum);
+        this.previewUrl.set(product.image);
+      }
+    })
+  }
 
   onFileChange(event: Event) {
     const input = event.target as HTMLInputElement;
@@ -43,7 +56,7 @@ export class ProductModal {
   }
 
   onSave() {
-    if(!this.selectedFile()) {
+    if(!this.isEditMode() && !this.selectedFile()) {
       this.formError.set('Please upload a product image.')
       return;
     }
@@ -59,28 +72,15 @@ export class ProductModal {
       this.formError.set('Please enter a valid stock number.');
       return;
     }
-    // if(!this.itemCategory()) {
-    //   this.formError.set('Please select a category');
-    //   return;
-    // }
 
     this.saved.emit({
+      id: this.editProduct()?.id,
       image: this.previewUrl()!,
       name: this.itemName()!.trim(),
       price: this.itemPrice()!,
       availableNum: this.itemStock()!,
       category: this.itemCategory()!,
     })
-
-    // this.formError.set(null);
-    
-    // this.foodService.addProduct({
-    //   image: this.previewUrl()!,
-    //   name: this.itemName().trim(),
-    //   price: this.itemPrice()!,
-    //   availableNum: this.itemStock()!,
-    //   category: this.itemCategory()!,
-    // });
 
     this.resetForm();
     this.close();
