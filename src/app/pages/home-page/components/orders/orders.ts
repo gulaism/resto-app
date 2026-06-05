@@ -15,7 +15,7 @@ export class Orders {
   activeIndex = signal<number>(0);
   orderedItems = input<Products>([]);
   updateQuantity = output<{id: number; quantity: number}>();
-  fees = [0, 1, 5]; // dine in, to go, delivery
+  fees = [0, 1, 5]; 
   removeItem = output<number>();
 
   isConfirmed = signal<boolean>(false);
@@ -45,6 +45,6 @@ export class Orders {
 
   setActiveOption(index: number) {
     this.activeIndex.set(index);
-    console.log('active:', this.activeIndex(), 'fee:', this.fees[this.activeIndex()])
+    
   }
 }

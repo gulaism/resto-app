@@ -7,7 +7,7 @@ import { Card } from '../../shared/card/card';
 
 @Component({
   selector: 'app-home-page',
-  imports: [DatePipe, CurrencyPipe, Orders, Card],
+  imports: [DatePipe, Orders, Card],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
 })

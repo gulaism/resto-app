@@ -1,9 +1,8 @@
-import { Component, computed, effect, inject, input, output, signal } from '@angular/core';
+import { Component, computed, effect, input, output, signal } from '@angular/core';
 import { Product } from '../../../../../services/food';
 
 @Component({
   selector: 'app-product-modal',
-  imports: [],
   templateUrl: './product-modal.html',
   styleUrl: './product-modal.css',
 })
@@ -106,8 +105,7 @@ export class ProductModal {
     this.itemStock.set(null);
     this.formError.set(null);
     this.fileError.set(null);
-    // this.itemCategory.set(null);
-  }
+   }
 
   close() {
     this.resetForm();

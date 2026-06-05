@@ -1,5 +1,4 @@
 import { Component, computed, input, output, signal } from '@angular/core';
-import { Orders } from '../orders/orders';
 import { Input } from '../../../../shared/input/input';
 import { SuccessModal } from "../success-modal/success-modal";
 
@@ -34,14 +33,7 @@ export class Payment {
   });
 
   confirmPayment() {
-    console.log({
-      cardHolder: this.cardHolder(),
-      cardNumber: this.cardNumber(),
-      expiryDate: this.expiryDate(),
-      cvv: this.cvv(),
-      tableNo: this.tableNo(),
-      isFormValid: this.isFormValid(),
-    });
+    
     if (!this.isFormValid()) {
       alert('Please complete all fields');
       return;
